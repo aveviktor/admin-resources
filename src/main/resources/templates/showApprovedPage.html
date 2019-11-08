@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="fragment">
+    <br>
+    <br>
+    <table>
+        <thead>
+        <th>User name</th>
+        <th>Exercise name</th>
+        <th>Exercise count</th>
+        <th>Created date</th>
+        <th>Link</th>
+        <th>Approve</th>
+        </thead>
+        <tbody>
+        <tr th:each="userExercise : ${userExercises}">
+            <td th:text="${userExercise.getUser().getName()}"></td>
+            <td th:text="${userExercise.getExercise().getName()}"></td>
+            <td th:text="${userExercise.getExerciseValue()}"></td>
+            <td th:text="${userExercise.getCreatedDate()}"></td>
+            <td><a target="_blank" rel="noopener noreferrer" th:href="${userExercise.getLinkForApprove()}"><div th:text="${userExercise.getLinkForApprove()}"></div></a></td>
+            <td>
+                <div th:if="${userExercise.getLinkForApprove() == null}">
+                    <input th:type="checkbox"  th:disabled=true>
+                </div>
+                <div th:unless="${userExercise.getLinkForApprove() == null}">
+                    <input th:type="checkbox">
+                </div>
+                </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

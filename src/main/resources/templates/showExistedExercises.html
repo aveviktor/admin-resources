@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="fragment">
+    <table>
+        <thead>
+        <th>Exercise name</th>
+        <th>Exercise description</th>
+        <th>Min range</th>
+        <th>Med range</th>
+        <th>Max range</th>
+        </thead>
+        <tbody>
+        <tr th:each="exercise : ${exercises}">
+            <td th:text="${exercise.getName()}"></td>
+            <td th:text="${exercise.getDescription()}"></td>
+            <td th:text="${exercise.getMinRange()}"></td>
+            <td th:text="${exercise.getMedRange()}"></td>
+            <td th:text="${exercise.getMaxRange()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

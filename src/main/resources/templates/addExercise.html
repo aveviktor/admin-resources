@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="fragment">
+    Fill name:
+    <input name="name" type="text">
+    Fill description:
+    <input name="description" type="text">
+    Fill min value:
+    <input name="min" type="text">
+    Fill med value:
+    <input name="med" type="text">
+    Fill max value:
+    <input name="max" type="text">
+    <div><input value="Save" type="submit" formaction="/saveNewExercise"></div>
+</div>
+</body>
+</html>
